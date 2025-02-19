@@ -199,6 +199,7 @@ const scrapeLogic = async (res) => {
                                     body: JSON.stringify(inmueble)
                                   });
 
+
                             } else {
                                 // console.log('repeat');
                             }
@@ -209,6 +210,8 @@ const scrapeLogic = async (res) => {
 
         // await delay(2000);
         await page.waitForNetworkIdle({idleTime: 2000});
+
+        res.send(inmueble);
 
         lote = (Number(lote) + 1).toString();
         first = false;
